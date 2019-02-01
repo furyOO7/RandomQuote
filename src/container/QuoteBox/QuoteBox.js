@@ -45,14 +45,20 @@ class QuoteBox extends Component{
         axios.get('http://api.forismatic.com/api/1.0/', {params: param}).then((response) => {
             //console.log(response)
             if(response.status === 200 && (typeof response.data == 'object')){
+
                for(var i=0;i< this.colorArray.length;i++){
+                   if(this.state.colornum === 50){
+                    this.setState({
+                        "colornum": 0
+                    })
+                   }
                    if( i === this.state.colornum){
                        
                        this.setState({
                            "color":  this.colorArray[i],
                            "colornum": ++i
                        })
-                       console.log(this.state.color)
+                       console.log(this.state.colornum, i)
                        break;
                    }
                }
