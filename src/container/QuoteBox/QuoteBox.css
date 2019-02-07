@@ -1,3 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ html {
+    height: 100%;
+    width: 100%;
+     position: relative;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+
 #quote-box {
     width: 500px;
     background: white;
@@ -24,14 +43,12 @@
 
 #tweet-quote {
     display: block;
-    background-color: balck;
+    background-color: black;
     float: left;
     margin: 0 15px
 }
 
-body{
-    background: #efefef;
-}
+ 
 #new-quote1 {
     width: 60%;
     float: left;
@@ -50,10 +67,12 @@ body{
 #new-quote {
     text-align: center;
 }
+
 .new-quote1 {
     width: 40px;
     height: 40px;
 }
+
 #new-quote .new-quote1.addclass {
     width: 120px;
 }
@@ -62,4 +81,3 @@ body{
 .new-quote1:hover {
     cursor: pointer;
 }
-

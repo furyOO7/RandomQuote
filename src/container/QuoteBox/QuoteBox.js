@@ -86,7 +86,8 @@ class QuoteBox extends Component{
 
     render(){
         return (
-            <div id="quote-box" style={{"backgroundColor": this.state.color}}>
+            <div className="main-container" style={{"backgroundColor": this.state.color}}>
+            <div id="quote-box">
 
             <div id="text">
                 <h2>{this.state.quoteText}</h2>
@@ -99,6 +100,7 @@ class QuoteBox extends Component{
             <button className="new-quote1" onClick={this.postSocialMedia}><i className="fa fa-facebook"></i></button>
             </div>
             <div id="new-quote" onClick={this.newQuoteHandler}><button className="new-quote1 addclass">New Quote</button></div>
+             </div>
              </div>
       
         )
