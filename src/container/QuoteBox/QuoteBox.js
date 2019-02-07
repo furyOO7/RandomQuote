@@ -45,29 +45,26 @@ class QuoteBox extends Component{
         axios.get('http://api.forismatic.com/api/1.0/', {params: param}).then((response) => {
             //console.log(response)
             if(response.status === 200 && (typeof response.data == 'object')){
-
                for(var i=0;i< this.colorArray.length;i++){
-                   if(this.state.colornum === 50){
-                    this.setState({
-                        "colornum": 0
-                    })
-                   }
-                   if( i === this.state.colornum){
-                       
+                console.log(this.state.colornum, i)
+                   if( i === this.state.colornum || this.state.colornum === this.colorArray.length){
+                       if( this.state.colornum !== 50){
                        this.setState({
                            "color":  this.colorArray[i],
-                           "colornum": ++i
+                           "colornum": ++i,
+                            "quoteText": response.data.quoteText,
+                           "author": response.data.quoteAuthor
                        })
-                       console.log(this.state.colornum, i)
                        break;
+                   }else{
+                        this.setState({
+                            "colornum": 0
+                        })
+                       
                    }
                }
-                this.setState({
-                    "quoteText": response.data.quoteText,
-                    "author": response.data.quoteAuthor,
-                   
-                })
             }
+        }
             else{
                 this.setState({
                     "quoteText": "We are tired!!. Please hit the button again to get Quote.",
